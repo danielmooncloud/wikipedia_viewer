@@ -1,4 +1,4 @@
-app.controller('MainController', function($scope, $timeout, wikidata) {
+app.controller('MainController', ['$scope', '$timeout', 'wikidata', function($scope, $timeout, wikidata) {
 
   $scope.enter = function(e) { 
     if(e.which === 13) {
@@ -14,6 +14,6 @@ app.controller('MainController', function($scope, $timeout, wikidata) {
     var pages = response.data.query.pages;
     $scope.results = response.data.query.pages;
   }
-});
+}]);
 
 
