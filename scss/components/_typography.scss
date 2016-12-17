@@ -1,0 +1,39 @@
+@import url('https://fonts.googleapis.com/css?family=Kaushan+Script');
+@import url('https://fonts.googleapis.com/css?family=Galada');
+
+body {
+  font-family: kaushan script;
+}
+
+h2 {
+  font-family: kaushan script;
+  font-size: 24px;
+}
+
+p {
+  font-family: kaushan script;
+  font-size: 18px;
+}
+
+a {
+  text-decoration: none;
+  text-shadow: 2px 2px 5px rgba(1, 1, 1, .9);
+  font-size: 24px;
+  font-family: Galada;
+  color: rgba(207, 103, 102, 1);
+  transition-property: color, font-size;
+  transition-duration: .5s;
+}
+
+a:hover {
+  text-decoration: none;
+  color: #984B43;
+  font-size: 30px;
+}
+
+
+input {
+  text-decoration: none;
+  font-size: 20px;
+  color: black;
+}
