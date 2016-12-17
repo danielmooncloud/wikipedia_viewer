@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+
+<head>
+	<meta charset = "utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+
+	
+	<!-- libraries -->
+    <link rel="stylesheet" href="css/bootstrap/bootstrap.min.css">
+	<link rel="stylesheet" href="css/animate.css/animate.min.css/3.5.1/animate.min.css">
+	
+    <!-- stylesheets -->
+    <link rel='stylesheet' href = 'css/refactored.css'>
+
+
+</head>
+
+<body ng-app="WikiViewer">
+    
+    <div class="main" ng-controller="MainController">
+        <div class="header">
+            <div class="randomarticle">
+                <a href="https://en.wikipedia.org/wiki/Special:Random" target="blank">Click Here for a random article!</a>
+            </div>
+                  
+                
+        	<div class="inputdiv">
+            	<input type="text" id="stuff" ng-model="search" on-Keypress='enter($event)' placeholder="SEARCH"></input>   
+        	</div>
+        </div>  
+        
+
+        <div id="list">
+            <div ng-repeat="result in results" class='results'>
+                <a ng-href="https://en.wikipedia.org/?curid= + {{result.pageid}}" class="listing"><h2>{{result.title}}</h2></a>
+                <p>{{result.extract}}</p>  
+            </div>
+
+        </div>
+       
+    </div>
+
+    
+    
+
+    <!-- vendors -->
+    
+    <script src="js/vendor/angular/angular.min.js"></script>
+    <script src="js/vendor/angular-animate/angular-animate.min.js"></script>
+     
+
+    <!-- modules -->
+    <script type="text/javascript" src="js/app.js"></script>
+
+    <!-- controllers -->
+    <script type="text/javascript" src="js/controllers/MainController.js"></script>
+
+    <!-- services -->
+    <script type="text/javascript" src="js/services/wikiservice.js"></script>
+
+    <!-- directives -->
+    <script type="text/javascript" src="js/directives/search.js"></script>
+
+        
+ 
+</body>
