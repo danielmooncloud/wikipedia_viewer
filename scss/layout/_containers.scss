@@ -1,12 +1,12 @@
 body {
+  @extend %auto-margin;
   height: 1600px;
-  background-color: rgba(144, 173, 187, 1);
-  margin: 0 auto;  
+  background-color: $blue-light;  
 }
 
 .main {
-  width: 100%;
-  margin: auto;
+  @extend %full-width;
+  @extend %auto-margin;
   padding-top: 50px;
   text-align: center;
 }
@@ -17,37 +17,43 @@ body {
 }
 
 .results {
+  cursor: pointer;
   text-align: left;
   border-radius: 5px;
   margin-bottom: 25px;
-  background-color: white;
-  box-shadow: 2px 2px 10px 3px rgba(1,1,1,.5);
+  background-color: $white;
+  box-shadow: 2px 2px 10px 3px $shadow;
   transition-property: transform;
   transition-duration: .3s;
   transition-timing-function: ease-in-out;
+  &:hover {
+    transform: scale(1.2);
+  }
+  &.ng-enter {
+    transition: .5s ease-in opacity;
+    opacity: 0;
+  }
+  &.ng-enter.ng-enter-active {
+    opacity: 1;
+  } 
+  &.ng-leave {
+    transition: .3s ease-in opacity;
+    opacity: 1;
+  }
+  &.ng-leave.ng-leave-active {
+    opacity: 0;
+  } 
 }
 
-.results:hover {
-  transform: scale(1.2);
-}
 
-.results.ng-enter {
-  transition: .5s ease-in opacity;
-  opacity: 0;
-}
 
-.results.ng-enter.ng-enter-active {
-  opacity: 1;
-} 
 
-.results.ng-leave {
-  transition: .3s ease-in opacity;
-  opacity: 1;
-}
 
-.results.ng-leave.ng-leave-active {
-  opacity: 0;
-} 
+
+
+
+
+
 
 
 

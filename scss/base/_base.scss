@@ -2,31 +2,33 @@
   box-sizing: border-box;
 }
 
-
 h2 {
-  padding-left: 25px;
-  padding-top: 5px;
+  padding: 15px 0 0 25px;
 }
 
 p {
-  padding-left: 25px;
-  padding-right: 25px;
-  padding-top: 10px;
-  padding-bottom: 15px;
+  padding: 10px 25px 15px 25px; 
 }
 
 input {
   width: 11%; 
   height: 50px;
   padding-left: 10px;
-  border: 5px solid rgba(207, 103, 102, 1);
-  background-color: rgba(247, 247, 247, .7);
+  border: 5px solid $salmon;
+  background-color: $translucent;
   box-shadow: 1px 1px 1px 1px;
   transition-property: width;
   transition-duration: .5s;
+  &:focus, &:hover {
+    outline: none;
+    width: 25%;
+  }
+  @media #{$brk-narrow} {
+    width: 40%;
+    &:hover {
+      width: 50%;
+    }
+  }
 }
 
-input:focus, input:hover {
-  outline: none;
-  width: 25%;
-}
+

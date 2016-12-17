@@ -1,0 +1,11 @@
+@mixin font-family($font-family) {
+	@import url('#{$path-font}#{$font-family}');
+}
+
+@mixin font($font-size, $l-height: null, $weight: null, $color: null, $font-family: $stack-kaushan-script) {
+	font-size: $font-size;
+	line-height: $l-height;
+	font-weight: $weight;
+	color: $color;
+	font-family: $font-family;
+}

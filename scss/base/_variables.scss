@@ -1,0 +1,25 @@
+// colors
+
+$shadow		:	rgba(1, 1, 1, .9);
+$white		:	#fff;
+$salmon		:	rgba(207, 103, 102, 1);
+$salmon-dark:	#984B43;
+$black		:	rgb(1,1,1);
+$translucent:	rgba(247, 247, 247, .7);
+$blue-light	:	rgba(144, 173, 187, 1);
+$blue-dark	:	rgba(6, 47, 79, .7);
+
+//font-stack
+
+$stack-sans-serif		:	Helvetica, Arial, sans-serif;
+$stack-kaushan-script 	:	'Kaushan Script', $stack-sans-serif;
+$stack-galada			:	'Galada', $stack-sans-serif;
+
+
+//asset paths
+
+$path-font				:	'https://fonts.googleapis.com/css?family=';
+
+//break points
+
+$brk-narrow				:	'screen and (max-width: 550px)'; 
