@@ -10,3 +10,6 @@ app.service('wikidata', ['$http', function($http) {
     console.log(error.data);
   }
 }]);
+
+
+//https://en.wikipedia.org/w/api.php?action=query&format=json&prop=extracts&list=&titles=&generator=search&exsentences=1&exlimit=10&exintro=1&explaintext=1&gsrsearch=' + string + '&callback=JSON_CALLBACK

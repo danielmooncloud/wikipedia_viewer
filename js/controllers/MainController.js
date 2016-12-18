@@ -5,14 +5,14 @@ app.controller('MainController', ['$scope', '$timeout', 'wikidata', function($sc
       $scope.results = [];
       $timeout(function() {
         wikidata.getWikis($scope.search, getData);
-      }, 300);
+      }, 300); 
        
     }
   }
 
   const getData = function(response) {
     var pages = response.data.query.pages;
-    $scope.results = response.data.query.pages;
+    $scope.results = response.data.query.pages; 
   }
 }]);
 
