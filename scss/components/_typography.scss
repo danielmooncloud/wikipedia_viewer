@@ -3,7 +3,7 @@
 
 
 body {
-@include font(12px);
+  @include font(12px);
 }
 
 h2 {
@@ -15,10 +15,10 @@ p {
 }
 
 a {
-  @extend %text-decoration;
+  @extend %decoration;
   text-shadow: 2px 2px 5px $shadow;
   &:hover, &:active, &:focus, &:visited {
-    text-decoration: none;
+    @extend %decoration;
   }
 }
 
