@@ -1,6 +1,6 @@
 /* anchor */
 
-a {
+a, a:visited {
   @include font(24px, $color:$salmon, $font-family: $stack-galada);
   transition-property: color, font-size;
   transition-duration: .5s;

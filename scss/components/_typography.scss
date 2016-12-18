@@ -17,7 +17,7 @@ p {
 a {
   @extend %text-decoration;
   text-shadow: 2px 2px 5px $shadow;
-  &:hover {
+  &:hover, &:active, &:focus, &:visited {
     text-decoration: none;
   }
 }
