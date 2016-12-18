@@ -11,17 +11,14 @@ p {
 }
 
 input {
-  width: 11%; 
+  
   height: 50px;
   padding-left: 10px;
   border: 5px solid $salmon;
   background-color: $translucent;
   box-shadow: 1px 1px 1px 1px;
-  transition-property: width;
-  transition-duration: .5s;
   &:focus, &:hover {
     outline: none;
-    width: 25%;
   }
   @media #{$brk-narrow} {
     width: 40%;

@@ -1,0 +1,30 @@
+/* anchor */
+
+a {
+  @include font(24px, $color:$salmon, $font-family: $stack-galada);
+  transition-property: color, font-size;
+  transition-duration: .5s;
+  &:hover {
+    @include font(30px, $color:$salmon-dark);
+  }
+}
+
+/* input */
+
+input {
+  width: 11%; 
+  transition-property: width;
+  transition-duration: .5s;
+  &:focus, &:hover {   
+    width: 25%;
+  }
+}
+
+/* results */
+
+.results {
+  transition: .3s transform ease-in-out;
+  &:hover {
+    transform: scale(1.2);
+  }
+}

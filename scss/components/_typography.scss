@@ -2,7 +2,6 @@
 @include font-family('Galada');
 
 
-
 body {
 @include font(12px);
 }
@@ -17,12 +16,9 @@ p {
 
 a {
   @extend %text-decoration;
-  @include font(24px, $color:$salmon, $font-family: $stack-galada);
   text-shadow: 2px 2px 5px $shadow;
-  transition-property: color, font-size;
-  transition-duration: .5s;
   &:hover {
-    @include font(30px, $color:$salmon-dark);
+    text-decoration: none;
   }
 }
 
