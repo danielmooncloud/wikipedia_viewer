@@ -11,8 +11,10 @@ app.controller('MainController', ['$scope', '$timeout', 'wikidata', function($sc
   }
 
   const getData = function(response) {
-    var pages = response.data.query.pages;
-    $scope.results = response.data.query.pages; 
+    if(response.status = 200) {
+      var pages = response.data.query.pages;
+      $scope.results = response.data.query.pages; 
+    } 
   }
 }]);
 
