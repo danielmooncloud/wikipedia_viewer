@@ -20,9 +20,9 @@ input {
     outline: none;
   }
   @media #{$brk-narrow} {
-    width: 40%;
+    min-width: 120px;
     &:hover {
-      width: 50%;
+      width: 150px;
     }
   }
 }
