@@ -24,7 +24,7 @@ body {
   background-color: $white;
   box-shadow: 2px 2px 10px 3px $shadow;
   &.ng-enter {
-    transition: .5s opacity ease-in ;
+    @include transition(.5s, opacity, ease-in);
     @include opacity(0);
   }
   &.ng-enter.ng-enter-active {
