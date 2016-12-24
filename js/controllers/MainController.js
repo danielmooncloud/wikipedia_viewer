@@ -1,3 +1,5 @@
+'use strict';
+
 app.controller('MainController', ['$scope', '$timeout', 'wikidata', function($scope, $timeout, wikidata) {
 
   $scope.enter = function(e) { 

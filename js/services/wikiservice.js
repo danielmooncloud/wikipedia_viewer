@@ -1,3 +1,4 @@
+'use strict';
 
 app.service('wikidata', ['$http', function($http) {
   this.getWikis = function(string, callback) {
