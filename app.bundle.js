@@ -10,7 +10,7 @@ webpackJsonp([0],[
 
 var angular = __webpack_require__(0);
 
-var mainController = angular.module("WikiViewer").controller("MainController", ["$scope", "$timeout", "wikidata", function ($scope, $timeout, wikidata) {
+angular.module("WikiViewer").controller("MainController", ["$scope", "$timeout", "wikidata", function ($scope, $timeout, wikidata) {
 
 	var vm = this;
 
