@@ -1,4 +1,4 @@
-"use strict";
+var angular = require("angular");
 
 angular.module("WikiViewer").directive("onKeypress", function() {
 	return {

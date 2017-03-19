@@ -1,6 +1,7 @@
-"use strict";
+var angular = require("angular");
 
-angular.module("WikiViewer").controller("MainController", ["$scope", "$timeout", "wikidata", function($scope, $timeout, wikidata) {
+
+var mainController = angular.module("WikiViewer").controller("MainController", ["$scope", "$timeout", "wikidata", function($scope, $timeout, wikidata) {
 
 	$scope.enter = function(e) { 
 		if(e.which === 13) {

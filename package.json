@@ -5,22 +5,32 @@
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "server": "python -m SimpleHTTPServer",
-    "eslint": "./node_modules/.bin/eslint"
+    "eslint": "./node_modules/.bin/eslint",
+    "start": "webpack-dev-server --inline --hot --content-base public/",
+    "build": "webpack"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
   "dependencies": {
-    "angular": "^1.6.0",
-    "angular-animate": "^1.5.9",
+    "angular": "^1.6.3",
+    "angular-animate": "^1.6.3",
     "angular-route": "^1.5.9",
     "animate.css": "^3.5.2",
     "bootstrap": "^3.3.7"
   },
   "devDependencies": {
+    "angular-sanitize": "^1.6.3",
+    "animate.css": "^3.5.2",
+    "css-loader": "^0.27.3",
     "eslint": "^3.18.0",
     "eslint-config-angular": "^0.5.0",
-    "eslint-plugin-angular": "^1.6.3"
+    "eslint-plugin-angular": "^1.6.3",
+    "extract-text-webpack-plugin": "^2.1.0",
+    "node-sass": "^4.5.0",
+    "sass-loader": "^6.0.3",
+    "style-loader": "^0.14.1",
+    "webpack": "^2.2.1",
+    "webpack-dev-server": "^2.4.2"
   }
 }
