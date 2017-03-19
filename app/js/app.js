@@ -6,7 +6,14 @@ require("../scss/application.scss");
 
 
 
-var app = angular.module("WikiViewer", [ngAnimate, ngSanitize]);
+var app = angular.module("WikiViewer", [ngAnimate, ngSanitize])
+
+.config(["$sceDelegateProvider", function($sceDelegateProvider) {
+	$sceDelegateProvider.resourceUrlWhitelist([
+		"self",
+		"https://en.wikipedia.org/w/**"		
+	]);
+}]);
 
 
 require("./directives/search.js");

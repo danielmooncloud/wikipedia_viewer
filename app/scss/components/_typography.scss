@@ -1,13 +1,15 @@
-@include font-family('Kaushan Script');
 @include font-family('Galada');
+@include font-family('Kaushan+Script');
 
 
 body {
   @include font(12px);
+  font-family: "Galada";
 }
 
 h2 {
   @include font(24px);
+  font-family: "Kaushan Script";
 }
 
 p {
@@ -25,3 +27,4 @@ a {
 input {
   @include font(20px, $color:black);
 }
+

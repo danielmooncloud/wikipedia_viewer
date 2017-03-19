@@ -7,7 +7,7 @@ module.exports = {
 	context: __dirname + "/app/js",
 	entry: {
 		app: "./app.js",
-		vendor: ["angular", "angular-animate"]
+		vendor: ["angular", "angular-animate", "angular-sanitize"]
 	},
 	output: {
 		path: __dirname + "/public",
@@ -15,6 +15,11 @@ module.exports = {
 	},
 	module: {
 		loaders: [
+			{
+				test: /\.js$/,
+				exclude: "/node_modules/",
+				loaders: ["babel-loader", "eslint-loader"]
+			},
 			{
 				test: /\.(scss|css)$/,
 				exclude: "/node_modules/",

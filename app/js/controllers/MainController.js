@@ -3,9 +3,11 @@ var angular = require("angular");
 
 var mainController = angular.module("WikiViewer").controller("MainController", ["$scope", "$timeout", "wikidata", function($scope, $timeout, wikidata) {
 
-	$scope.enter = function(e) { 
+	var vm = this;
+
+	vm.enter = function(e) { 
 		if(e.which === 13) {
-			$scope.results = [];
+			vm.results = [];
 			$timeout(function() {
 				wikidata.getWikis($scope.search, getData);
 			}, 300);  
@@ -14,7 +16,7 @@ var mainController = angular.module("WikiViewer").controller("MainController", [
 
 	const getData = function(response) {
 		if(response.status = 200) {
-			$scope.results = response.data.query.pages; 
+			vm.results = response.data.query.pages; 
 		} 
 	};
 }]);

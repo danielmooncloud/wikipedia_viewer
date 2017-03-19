@@ -1,11 +1,11 @@
 /* anchor */
 
 a, a:visited {
-  @include font(24px, $color:$salmon, $font-family: $stack-galada);
+  @include font(24px, $color:$salmon);
   @include transition(.5s, color);
   @include transition(.5s, font-size);
   &:hover {
-    @include font(30px, $color:$salmon-dark, $font-family: $stack-galada);
+    @include font(30px, $color:$salmon-dark);
   }
 }
 
