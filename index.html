@@ -1,0 +1,46 @@
+ <!DOCTYPE html>
+
+<head>
+	<meta charset = "utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Wikipedia Viewer</title>
+	
+	<!-- libraries -->
+    <link rel="icon" href="images/eye.png?v=2">
+    <link rel="stylesheet" href="app.css">
+
+
+</head>
+
+<body ng-app="WikiViewer">
+    
+    <div class="main" ng-controller="MainController">
+        <div class="header">
+            <div class="randomarticle">
+                <a href="https://en.wikipedia.org/wiki/Special:Random" target="blank">Click Here for a random article!</a>
+            </div>
+                  
+                
+        	<div class="inputdiv">
+            	<input ng-model="search" on-Keypress='enter($event)' placeholder="SEARCH"></input>   
+        	</div>
+        </div>  
+        
+
+        <div id="list">
+            <div ng-repeat="result in results" class='results'>
+                <a ng-href="https://en.wikipedia.org/?curid= + {{result.pageid}}" class="listing"><h2>{{result.title}}</h2></a>
+                <p>{{result.extract}}</p>  
+            </div>
+
+        </div>
+       
+    </div>
+
+    <!-- vendors -->   
+    <script src="app.vendor.js"></script>
+    <script src="app.bundle.js"></script>
+</body>
+
+
+
