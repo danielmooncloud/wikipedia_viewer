@@ -1,9 +1,9 @@
 var angular = require("angular");
 
 
-var mainController = angular.module("WikiViewer").controller("MainController", ["$scope", "$timeout", "wikidata", function($scope, $timeout, wikidata) {
+angular.module("WikiViewer").controller("MainController", ["$scope", "$timeout", "wikidata", function($scope, $timeout, wikidata) {
 
-	var vm = this;
+	const vm = this;
 
 	vm.enter = function(e) { 
 		if(e.which === 13) {
