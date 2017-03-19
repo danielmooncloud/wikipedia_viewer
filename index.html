@@ -14,7 +14,7 @@
 
 <body ng-app="WikiViewer">
     
-    <div class="main" ng-controller="MainController">
+    <div class="main" ng-controller="MainController as vm">
         <div class="header">
             <div class="randomarticle">
                 <a href="https://en.wikipedia.org/wiki/Special:Random" target="blank">Click Here for a random article!</a>
@@ -22,13 +22,13 @@
                   
                 
         	<div class="inputdiv">
-            	<input ng-model="search" on-Keypress='enter($event)' placeholder="SEARCH"></input>   
+            	<input ng-model="search" on-Keypress='vm.enter($event)' placeholder="SEARCH"></input>   
         	</div>
         </div>  
         
 
         <div id="list">
-            <div ng-repeat="result in results" class='results'>
+            <div ng-repeat="result in vm.results" class='results'>
                 <a ng-href="https://en.wikipedia.org/?curid= + {{result.pageid}}" class="listing"><h2>{{result.title}}</h2></a>
                 <p>{{result.extract}}</p>  
             </div>

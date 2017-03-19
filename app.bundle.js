@@ -1,86 +1,79 @@
 webpackJsonp([0],[
 /* 0 */,
 /* 1 */,
-/* 2 */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
+/* 2 */,
+/* 3 */
+/***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_angular__ = __webpack_require__(0);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_angular___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0_angular__);
 
 
-__WEBPACK_IMPORTED_MODULE_0_angular___default.a.module("WikiViewer").controller("MainController", ["$scope", "$timeout", "wikidata", function($scope, $timeout, wikidata) {
+var angular = __webpack_require__(0);
 
-	$scope.enter = function(e) { 
-		if(e.which === 13) {
-			$scope.results = [];
-			$timeout(function() {
+var mainController = angular.module("WikiViewer").controller("MainController", ["$scope", "$timeout", "wikidata", function ($scope, $timeout, wikidata) {
+
+	var vm = this;
+
+	vm.enter = function (e) {
+		if (e.which === 13) {
+			vm.results = [];
+			$timeout(function () {
 				wikidata.getWikis($scope.search, getData);
-			}, 300);  
+			}, 300);
 		}
 	};
 
-	const getData = function(response) {
-		if(response.status = 200) {
-			$scope.results = response.data.query.pages; 
-		} 
+	var getData = function getData(response) {
+		if (response.status = 200) {
+			vm.results = response.data.query.pages;
+		}
 	};
 }]);
 
-
-
-
 /***/ }),
-/* 3 */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
+/* 4 */
+/***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_angular__ = __webpack_require__(0);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_angular___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0_angular__);
 
 
-__WEBPACK_IMPORTED_MODULE_0_angular___default.a.module("WikiViewer").directive("onKeypress", function() {
+var angular = __webpack_require__(0);
+
+angular.module("WikiViewer").directive("onKeypress", function () {
 	return {
 		scope: {
 			handler: "&onKeypress"
 		},
-		link: function(scope, element) {
-			element.bind("keypress", function(e) {
-				scope.handler({$event: e});
+		link: function link(scope, element) {
+			element.bind("keypress", function (e) {
+				scope.handler({ $event: e });
 			});
 		}
-	};  
+	};
 });
 
 /***/ }),
-/* 4 */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
+/* 5 */
+/***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_angular__ = __webpack_require__(0);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_angular___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0_angular__);
 
 
-__WEBPACK_IMPORTED_MODULE_0_angular___default.a.module("WikiViewer").service("wikidata", ["$http", "$log", function($http, $log) {
-	this.getWikis = function(string, callback) {
-		$http.jsonp("https://en.wikipedia.org/w/api.php?action=query&format=json&prop=extracts&list=&titles=&generator=search&exsentences=1&exlimit=10&exintro=1&explaintext=1&gsrsearch=" + string + "&callback=JSON_CALLBACK")
-			.then(callback)
-			.catch(logError);
+var angular = __webpack_require__(0);
+
+angular.module("WikiViewer").factory("wikidata", ["$http", "$log", function ($http, $log) {
+
+	var logError = function logError(error) {
+		$log.debug(error);
 	};
 
-	const logError = function(error) {
-		$log(error.data);
+	return {
+
+		getWikis: function getWikis(string, callback) {
+			$http.jsonp("https://en.wikipedia.org/w/api.php?action=query&format=json&prop=extracts&list=&titles=&generator=search&exsentences=1&exlimit=10&exintro=1&explaintext=1&gsrsearch=" + string).then(callback).catch(logError);
+		}
 	};
 }]);
-
-
-
-
-/***/ }),
-/* 5 */
-/***/ (function(module, exports) {
-
-// removed by extract-text-webpack-plugin
 
 /***/ }),
 /* 6 */
@@ -89,36 +82,34 @@ __WEBPACK_IMPORTED_MODULE_0_angular___default.a.module("WikiViewer").service("wi
 // removed by extract-text-webpack-plugin
 
 /***/ }),
-/* 7 */,
+/* 7 */
+/***/ (function(module, exports) {
+
+// removed by extract-text-webpack-plugin
+
+/***/ }),
 /* 8 */,
-/* 9 */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
+/* 9 */,
+/* 10 */,
+/* 11 */
+/***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
-Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_angular__ = __webpack_require__(0);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_angular___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0_angular__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_angular_animate__ = __webpack_require__(1);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_angular_animate___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_1_angular_animate__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_animate_css__ = __webpack_require__(6);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_animate_css___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_2_animate_css__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__scss_application_scss__ = __webpack_require__(5);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__scss_application_scss___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_3__scss_application_scss__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__controllers_MainController_js__ = __webpack_require__(2);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__directives_search_js__ = __webpack_require__(3);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__services_wikidata_js__ = __webpack_require__(4);
 
 
+var angular = __webpack_require__(0);
+var ngAnimate = __webpack_require__(1);
+var ngSanitize = __webpack_require__(2);
+__webpack_require__(7);
+__webpack_require__(6);
 
+var app = angular.module("WikiViewer", [ngAnimate, ngSanitize]).config(["$sceDelegateProvider", function ($sceDelegateProvider) {
+	$sceDelegateProvider.resourceUrlWhitelist(["self", "https://en.wikipedia.org/w/**"]);
+}]);
 
-
-
-
-var app = __WEBPACK_IMPORTED_MODULE_0_angular___default.a.module("WikiViewer", [__WEBPACK_IMPORTED_MODULE_1_angular_animate___default.a]);
-
-
-
-
+__webpack_require__(4);
+__webpack_require__(5);
+__webpack_require__(3);
 
 /***/ })
-],[9]);
+],[11]);
