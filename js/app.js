@@ -1,3 +1,3 @@
-'use strict';
+"use strict";
 
-var app = angular.module('WikiViewer', ['ngAnimate']);
+var app = angular.module("WikiViewer", ["ngAnimate"]);
