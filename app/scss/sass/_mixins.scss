@@ -11,8 +11,8 @@
 }
 
 @mixin transition($duration, $property, $timing-function: ease-in-out, $delay: null) {
-	-webkit-transition: $duration, $property, $timing-function, $delay;
-	transition: $duration, $property, $timing-function, $delay;
+	-webkit-transition: $duration $property $timing-function $delay;
+	transition: $duration $property $timing-function $delay;
 }
 
 @mixin transform($value) {

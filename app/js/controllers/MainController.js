@@ -1,7 +1,6 @@
-var angular = require("angular");
 
 
-angular.module("WikiViewer").controller("MainController", ["$scope", "$timeout", "wikidata", function($scope, $timeout, wikidata) {
+function MainController($scope, $timeout, wikidata) {
 
 	const vm = this;
 
@@ -19,6 +18,8 @@ angular.module("WikiViewer").controller("MainController", ["$scope", "$timeout",
 			vm.results = response.data.query.pages; 
 		} 
 	};
-}]);
+};
+
+export default MainController;
 
 

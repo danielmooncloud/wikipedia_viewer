@@ -1,7 +1,6 @@
-var angular = require("angular");
 
-angular.module("WikiViewer").factory("wikidata", ["$http", "$log", function($http, $log) {
-	
+
+const wikidata = ($http, $log) => {	
 	
 	const logError = function(error) {
 		$log.debug(error);
@@ -16,6 +15,8 @@ angular.module("WikiViewer").factory("wikidata", ["$http", "$log", function($htt
 				.catch(logError);
 		}	
 	};	
-}]);
+};
+
+export default wikidata;
 
 

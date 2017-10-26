@@ -1,14 +1,16 @@
-var angular = require("angular");
 
-angular.module("WikiViewer").directive("onKeypress", function() {
+
+const search = () => {
 	return {
 		scope: {
 			handler: "&onKeypress"
 		},
-		link: function(scope, element) {
-			element.bind("keypress", function(e) {
+		link(scope, element) {
+			element.bind("keypress", (e) => {
 				scope.handler({$event: e});
 			});
 		}
 	};  
-});
+};
+
+export default search;

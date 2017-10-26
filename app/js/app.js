@@ -1,21 +1,25 @@
-var angular = require("angular");
-var ngAnimate = require("angular-animate");
-var ngSanitize = require("angular-sanitize");
-require("animate.css");
-require("../scss/application.scss");
+import angular from "angular";
+import ngAnimate from "angular-animate";
+import ngSanitize from "angular-sanitize";
+
+import AppConfig from "./config/AppConfig.js";
+import search from "./directives/search.js";
+import wikidata from "./services/wikidata.js";
+import MainController from "./controllers/MainController.js";
+
+import "animate.css";
+import "../scss/application.scss";
+
+
+const app = angular.module("WikiViewer", [ngAnimate, ngSanitize])
+	.config(["$sceDelegateProvider", AppConfig])
+	.factory("wikidata", ["$http", "$log", wikidata])
+	.directive("onKeypress", search)
+	.controller("MainController", ["$scope", "$timeout", "wikidata", MainController]);
 
 
 
-var app = angular.module("WikiViewer", [ngAnimate, ngSanitize])
-
-.config(["$sceDelegateProvider", function($sceDelegateProvider) {
-	$sceDelegateProvider.resourceUrlWhitelist([
-		"self",
-		"https://en.wikipedia.org/w/**"		
-	]);
-}]);
 
 
-require("./directives/search.js");
-require("./services/wikidata.js");
-require("./controllers/MainController.js");
+
+

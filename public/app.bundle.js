@@ -3,14 +3,45 @@ webpackJsonp([0],[
 /* 1 */,
 /* 2 */,
 /* 3 */
+/***/ (function(module, exports) {
+
+// removed by extract-text-webpack-plugin
+
+/***/ }),
+/* 4 */
+/***/ (function(module, exports) {
+
+// removed by extract-text-webpack-plugin
+
+/***/ }),
+/* 5 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
 
 
-var angular = __webpack_require__(0);
+Object.defineProperty(exports, "__esModule", {
+	value: true
+});
+var AppConfig = function AppConfig($sceDelegateProvider) {
+	$sceDelegateProvider.resourceUrlWhitelist(["self", "https://en.wikipedia.org/w/**"]);
+};
 
-angular.module("WikiViewer").controller("MainController", ["$scope", "$timeout", "wikidata", function ($scope, $timeout, wikidata) {
+exports.default = AppConfig;
+
+/***/ }),
+/* 6 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+Object.defineProperty(exports, "__esModule", {
+	value: true
+});
+
+
+function MainController($scope, $timeout, wikidata) {
 
 	var vm = this;
 
@@ -28,18 +59,23 @@ angular.module("WikiViewer").controller("MainController", ["$scope", "$timeout",
 			vm.results = response.data.query.pages;
 		}
 	};
-}]);
+};
+
+exports.default = MainController;
 
 /***/ }),
-/* 4 */
+/* 7 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
 
 
-var angular = __webpack_require__(0);
+Object.defineProperty(exports, "__esModule", {
+	value: true
+});
 
-angular.module("WikiViewer").directive("onKeypress", function () {
+
+var search = function search() {
 	return {
 		scope: {
 			handler: "&onKeypress"
@@ -50,18 +86,23 @@ angular.module("WikiViewer").directive("onKeypress", function () {
 			});
 		}
 	};
-});
+};
+
+exports.default = search;
 
 /***/ }),
-/* 5 */
+/* 8 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
 
 
-var angular = __webpack_require__(0);
+Object.defineProperty(exports, "__esModule", {
+	value: true
+});
 
-angular.module("WikiViewer").factory("wikidata", ["$http", "$log", function ($http, $log) {
+
+var wikidata = function wikidata($http, $log) {
 
 	var logError = function logError(error) {
 		$log.debug(error);
@@ -73,43 +114,52 @@ angular.module("WikiViewer").factory("wikidata", ["$http", "$log", function ($ht
 			$http.jsonp("https://en.wikipedia.org/w/api.php?action=query&format=json&prop=extracts&list=&titles=&generator=search&exsentences=1&exlimit=10&exintro=1&explaintext=1&gsrsearch=" + string).then(callback).catch(logError);
 		}
 	};
-}]);
+};
+
+exports.default = wikidata;
 
 /***/ }),
-/* 6 */
-/***/ (function(module, exports) {
-
-// removed by extract-text-webpack-plugin
-
-/***/ }),
-/* 7 */
-/***/ (function(module, exports) {
-
-// removed by extract-text-webpack-plugin
-
-/***/ }),
-/* 8 */,
-/* 9 */,
-/* 10 */,
-/* 11 */
+/* 9 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
 
 
-var angular = __webpack_require__(0);
-var ngAnimate = __webpack_require__(1);
-var ngSanitize = __webpack_require__(2);
-__webpack_require__(7);
-__webpack_require__(6);
+var _angular = __webpack_require__(2);
 
-var app = angular.module("WikiViewer", [ngAnimate, ngSanitize]).config(["$sceDelegateProvider", function ($sceDelegateProvider) {
-	$sceDelegateProvider.resourceUrlWhitelist(["self", "https://en.wikipedia.org/w/**"]);
-}]);
+var _angular2 = _interopRequireDefault(_angular);
+
+var _angularAnimate = __webpack_require__(0);
+
+var _angularAnimate2 = _interopRequireDefault(_angularAnimate);
+
+var _angularSanitize = __webpack_require__(1);
+
+var _angularSanitize2 = _interopRequireDefault(_angularSanitize);
+
+var _AppConfig = __webpack_require__(5);
+
+var _AppConfig2 = _interopRequireDefault(_AppConfig);
+
+var _search = __webpack_require__(7);
+
+var _search2 = _interopRequireDefault(_search);
+
+var _wikidata = __webpack_require__(8);
+
+var _wikidata2 = _interopRequireDefault(_wikidata);
+
+var _MainController = __webpack_require__(6);
+
+var _MainController2 = _interopRequireDefault(_MainController);
 
 __webpack_require__(4);
-__webpack_require__(5);
+
 __webpack_require__(3);
 
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+var app = _angular2.default.module("WikiViewer", [_angularAnimate2.default, _angularSanitize2.default]).config(["$sceDelegateProvider", _AppConfig2.default]).factory("wikidata", ["$http", "$log", _wikidata2.default]).directive("onKeypress", _search2.default).controller("MainController", ["$scope", "$timeout", "wikidata", _MainController2.default]);
+
 /***/ })
-],[11]);
+],[9]);
