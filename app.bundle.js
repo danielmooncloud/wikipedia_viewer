@@ -55,6 +55,7 @@ function MainController($scope, $timeout, wikidata) {
 	};
 
 	var getData = function getData(response) {
+
 		if (response.status = 200) {
 			vm.results = response.data.query.pages;
 		}
@@ -110,8 +111,8 @@ var wikidata = function wikidata($http, $log) {
 
 	return {
 
-		getWikis: function getWikis(string, callback) {
-			$http.jsonp("https://en.wikipedia.org/w/api.php?action=query&format=json&prop=extracts&list=&titles=&generator=search&exsentences=1&exlimit=10&exintro=1&explaintext=1&gsrsearch=" + string).then(callback).catch(logError);
+		getWikis: function getWikis(query, callback) {
+			$http.jsonp("https://en.wikipedia.org/w/api.php?action=query&format=json&prop=extracts&list=&titles=&generator=search&exsentences=1&exlimit=10&exintro=1&explaintext=1&gsrsearch=" + query).then(callback).catch(logError);
 		}
 	};
 };
