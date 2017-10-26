@@ -2437,16 +2437,16 @@ body {
   background-color: #fff;
   box-shadow: 2px 2px 10px 3px rgba(1, 1, 1, 0.9); }
   .results.ng-enter {
-    -webkit-transition: 0.5s, opacity, ease-in;
-    transition: 0.5s, opacity, ease-in;
+    -webkit-transition: 0.5s opacity ease-in;
+    transition: 0.5s opacity ease-in;
     opacity: 0;
     -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=0)"; }
   .results.ng-enter.ng-enter-active {
     opacity: 1;
     -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=100)"; }
   .results.ng-leave {
-    -webkit-transition: 0.3s, opacity, ease-in;
-    transition: 0.3s, opacity, ease-in;
+    -webkit-transition: 0.3s opacity ease-in;
+    transition: 0.3s opacity ease-in;
     opacity: 1;
     -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=100)"; }
   .results.ng-leave.ng-leave-active {
@@ -2473,10 +2473,10 @@ a, a:visited {
   font-size: 24px;
   color: #cf6766;
   font-family: "Kaushan Script", Helvetica, Arial, sans-serif;
-  -webkit-transition: 0.5s, color, ease-in-out;
-  transition: 0.5s, color, ease-in-out;
-  -webkit-transition: 0.5s, font-size, ease-in-out;
-  transition: 0.5s, font-size, ease-in-out; }
+  -webkit-transition: 0.5s color ease-in-out;
+  transition: 0.5s color ease-in-out;
+  -webkit-transition: 0.5s font-size ease-in-out;
+  transition: 0.5s font-size ease-in-out; }
   a:hover, a:visited:hover {
     font-size: 30px;
     color: #984B43;
@@ -2485,15 +2485,15 @@ a, a:visited {
 /* input */
 input {
   width: 11%;
-  -webkit-transition: 0.5s, width, ease-in-out;
-  transition: 0.5s, width, ease-in-out; }
+  -webkit-transition: 0.5s width ease-in-out;
+  transition: 0.5s width ease-in-out; }
   input:hover {
     width: 25%; }
 
 /* results */
 .results {
-  -webkit-transition: 0.3s, transform, ease-in-out;
-  transition: 0.3s, transform, ease-in-out; }
+  -webkit-transition: 0.3s transform ease-in-out;
+  transition: 0.3s transform ease-in-out; }
   .results:hover {
     -webkit-transform: scale(1.2);
     transform: scale(1.2); }
