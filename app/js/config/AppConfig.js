@@ -1,8 +1,5 @@
 const AppConfig = ($sceDelegateProvider) => {
-	$sceDelegateProvider.resourceUrlWhitelist([
-		"self",
-		"https://en.wikipedia.org/w/**"		
-	]);
+	$sceDelegateProvider.resourceUrlWhitelist(["self", "https://en.wikipedia.org/w/**"]);
 };
 
 
