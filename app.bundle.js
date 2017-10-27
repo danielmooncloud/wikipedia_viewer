@@ -46,19 +46,13 @@ function MainController($scope, $timeout, wikidata) {
 	var vm = this;
 
 	vm.enter = function (e) {
-		if (e.which === 13) {
-			vm.results = [];
-			$timeout(function () {
-				wikidata.getWikis($scope.search, getData);
-			}, 300);
-		}
+		if (e.which === 13) $timeout(function () {
+			return wikidata.getWikis($scope.search, getData);
+		}, 300);
 	};
 
 	var getData = function getData(response) {
-
-		if (response.status = 200) {
-			vm.results = response.data.query.pages;
-		}
+		if (response.status === 200) vm.results = response.data.query.pages;
 	};
 };
 
@@ -105,14 +99,9 @@ Object.defineProperty(exports, "__esModule", {
 
 var wikidata = function wikidata($http, $log) {
 
-	var logError = function logError(error) {
-		$log.debug(error);
-	};
-
 	return {
-
 		getWikis: function getWikis(query, callback) {
-			$http.jsonp("https://en.wikipedia.org/w/api.php?action=query&format=json&prop=extracts&list=&titles=&generator=search&exsentences=1&exlimit=10&exintro=1&explaintext=1&gsrsearch=" + query).then(callback).catch(logError);
+			$http.jsonp("https://en.wikipedia.org/w/api.php?action=query&format=json&prop=extracts&list=&titles=&generator=search&exsentences=1&exlimit=10&exintro=1&explaintext=1&gsrsearch=" + query).then(callback).catch($log.debug);
 		}
 	};
 };
