@@ -89,7 +89,7 @@ body {
 
         a {
             text-decoration: none;
-            text-shadow: 2px 2px 5px $shadow;
+            text-shadow: 1px 1px 1px $shadow;
             &:hover, &:active, &:focus, &:visited {
                 text-decoration: none;
             }

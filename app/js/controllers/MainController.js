@@ -9,8 +9,14 @@ function MainController($scope, $timeout, wikidata) {
 	};
 
 
-	const getData = response => {
-		if(response.status === 200) vm.results = response.data.query.pages; 
+	const getData = (err, res) => {
+		if(err) {
+			vm.results = [{"title": "There was a problem connecting to Wikipedia", "extract": "" }];
+		} else if(res.status === 200 && res.data.query) {
+			vm.results = res.data.query.pages; 
+		} else if(res.status === 200) {
+			vm.results = [{"title": "No Results were Found for this Query", "extract": "" }];
+		} 
 	};
 
 };
