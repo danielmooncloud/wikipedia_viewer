@@ -14,7 +14,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_angular_sanitize__ = __webpack_require__(2);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_angular_sanitize___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_2_angular_sanitize__);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__config_AppConfig_js__ = __webpack_require__(7);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__directives_search_js__ = __webpack_require__(8);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__directives_keypress_js__ = __webpack_require__(8);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__services_wikidata_js__ = __webpack_require__(9);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__controllers_MainController_js__ = __webpack_require__(10);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_7_animate_css__ = __webpack_require__(11);
@@ -33,7 +33,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 
 
 
-const app = __WEBPACK_IMPORTED_MODULE_0_angular___default.a.module("WikiViewer", [__WEBPACK_IMPORTED_MODULE_1_angular_animate___default.a, __WEBPACK_IMPORTED_MODULE_2_angular_sanitize___default.a]).config(["$sceDelegateProvider", __WEBPACK_IMPORTED_MODULE_3__config_AppConfig_js__["a" /* default */]]).factory("wikidata", ["$http", "$log", __WEBPACK_IMPORTED_MODULE_5__services_wikidata_js__["a" /* default */]]).directive("onKeypress", __WEBPACK_IMPORTED_MODULE_4__directives_search_js__["a" /* default */]).controller("MainController", ["$scope", "$timeout", "wikidata", __WEBPACK_IMPORTED_MODULE_6__controllers_MainController_js__["a" /* default */]]);
+const app = __WEBPACK_IMPORTED_MODULE_0_angular___default.a.module("WikiViewer", [__WEBPACK_IMPORTED_MODULE_1_angular_animate___default.a, __WEBPACK_IMPORTED_MODULE_2_angular_sanitize___default.a]).config(["$sceDelegateProvider", __WEBPACK_IMPORTED_MODULE_3__config_AppConfig_js__["a" /* default */]]).factory("wikidata", ["$http", "$log", __WEBPACK_IMPORTED_MODULE_5__services_wikidata_js__["a" /* default */]]).directive("onKeypress", __WEBPACK_IMPORTED_MODULE_4__directives_keypress_js__["a" /* default */]).controller("MainController", ["$scope", "$timeout", "wikidata", __WEBPACK_IMPORTED_MODULE_6__controllers_MainController_js__["a" /* default */]]);
 
 /***/ }),
 /* 4 */,
@@ -56,7 +56,7 @@ const AppConfig = $sceDelegateProvider => {
 "use strict";
 
 
-const search = () => {
+const keypress = () => {
 	return {
 		scope: {
 			handler: "&onKeypress"
@@ -69,7 +69,7 @@ const search = () => {
 	};
 };
 
-/* harmony default export */ __webpack_exports__["a"] = (search);
+/* harmony default export */ __webpack_exports__["a"] = (keypress);
 
 /***/ }),
 /* 9 */
@@ -80,9 +80,11 @@ const search = () => {
 
 const wikidata = ($http, $log) => {
 
+	const wikiAPI = "https://en.wikipedia.org/w/api.php?action=query&format=json&prop=extracts&list=&titles=&generator=search&exsentences=1&exlimit=10&exintro=1&explaintext=1&gsrsearch=";
+
 	return {
 		getWikis(query) {
-			return $http.jsonp("https://en.wikipedia.org/w/api.php?action=query&format=json&prop=extracts&list=&titles=&generator=search&exsentences=1&exlimit=10&exintro=1&explaintext=1&gsrsearch=" + query);
+			return $http.jsonp(wikiAPI + query);
 		}
 	};
 };
